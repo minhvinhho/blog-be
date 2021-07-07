@@ -31,6 +31,10 @@ class ApiUserController extends Controller
             return response()->json($user);
         }
 
-        abort('sai email hoac password', 403);
+        return response()->json(['email' => 'sai email hoac password'], 401);
     }    
+
+    public function userInfo(Request $request){
+        return response()->json($request->user('api'));
+    }
 }
