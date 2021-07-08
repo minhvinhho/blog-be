@@ -12,12 +12,15 @@ use Illuminate\Support\Facades\Hash;
 class ApiUserController extends Controller
 {
     public function register(ApiRegisterRequest $request){
-        $user = new User;
-        $user->fill($request->all());
-        $user->password = Hash::make($request->password);
-        $user->save();
+        //if("password" === "password_match"){
+            $user = new User;
+            $user->fill($request->all());
+            $user->password = Hash::make($request->password);
+            $user->save();
 
-        return response()->json($user);
+            return response()->json($user);
+       // }
+       // return response()->json(['password_match' => 'password khong khop'], 401);
     }
 
     public function login(ApiLoginRequest $request){
