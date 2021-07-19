@@ -40,4 +40,24 @@ class ApiUserController extends Controller
     public function userInfo(Request $request){
         return response()->json($request->user('api'));
     }
+    
+    /////////////////////////////////
+
+    // public function updateUser(ApiUserRequest $request, $id) {
+    //     $user = User::find($id);
+    //     if(is_null($user)) {
+    //         return response()->json(['message' => 'User Not Found'], 404);
+    //     }
+    //     $user->update($request->all());
+    //     return response($user, 200);
+    // }
+
+    // public function deleteUser(Request $request, $id) {
+    //     $user = User::find($id);
+    //     if(is_null($user)) {
+    //         return response()->json(['message' => 'User Not Found'], 404);
+    //     }
+    //     $user->delete();
+    //     return response()->json(null, 204);
+    // }
 }
